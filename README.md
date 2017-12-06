@@ -15,8 +15,8 @@ Webサーバ上でPHPを実行させたかった。 レンタルサーバもな�
 以下に手順。
 
 1. VMにいんすこされたゲストOSとホストOSを通信できるようにする。 以下､ 手順通り。  
-VM本体の環境設定 (Preference) のネットワーク (Network) を開く。 Host-only Networkをクリックし、 右側にある＋を押して新しく「なにか」を追加する。 名前が思いつかない。 ここで追加した「なにか」を開いて、 IPアドレスをメモメモ。
-
+VM本体の環境設定 (Preference) のネットワーク (Network) を開く。  
+Host-only Networkをクリックし、 右側にある＋を押して新しく「なにか」を追加する。 名前が思いつかない。 ここで追加した「なにか」を開いて、 IPアドレスをメモメモ。  
 ゲストOSの方のネットワークを設定する。  
 NATに割り当てられてるアダプターからポートフォワーディングを設定｡ 一応､ SSHを追加する。  
 次にアダプターを追加して、 Host-only Networkを追加する。 追加するのは、 1. で追加した「なにか」。  
@@ -24,12 +24,15 @@ NATに割り当てられてるアダプターからポートフォワーディ�
 ホストOSのターミナルを開き、 管理者ログイン。 (sudo) `nmtui`コマンドでNetWorkManeger設定｡  
 enp03 (?) 覚えてないけど、 とりあえずNATアダプターに割り当てられてるほうのIPv6を無効化｡ (Ignore)  
 サラミサラミ、 Automatically connectにチェック。 (spaceキー) OKでこっちの設定は終了｡  
-enp08 (?) のHost-only Networkに割り当てられてるほうもIPv6無効化｡ IPv4を固定化｡ さっきメモしたやつとは違うものにする。 具体的に言えば、 IPアドレスの下3桁を変更｡ (xxx.xxx.xxx.yyy) (yyy = 101) とか。  
+enp08 (?) のHost-only Networkに割り当てられてるほうもIPv6無効化｡   
+IPv4を固定化｡ さっきメモしたやつとは違うものにする。  
+具体的に言えば、 IPアドレスの下3桁を変更｡ (xxx.xxx.xxx.yyy) (yyy = 101) とか。  
 Automatically connectにチェック。 OK -> Quitで終了。`# systemctl restart NetworkManeger`で再起｡  
 
 ※もし、 enpが出てなかったら`systemctl restart NetworkManeger`で再起かければ出てくる。  
 
-`ping`やらでパケットが送れるか、 `ssh`でログインできるかなどして、 相互通信可能か確かめる。 `ssh root@xxx.xxx.xxx.yyy`でログインできないなら、 ググってくだされ｡  
+`ping`やらでパケットが送れるか、 `ssh`でログインできるかなどして、 相互通信可能か確かめる。  
+`ssh root@xxx.xxx.xxx.yyy`でログインできないなら、 ググってくだされ｡  
 
 
 
