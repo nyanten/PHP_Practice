@@ -43,7 +43,7 @@ Automatically connectにチェック。 OK -> Quitで終了。`# systemctl resta
 ぼくはUbuntuなので、 `sudo apt-get`　でApache2､ PHP7.0､ MySQLを導入｡　Apacheの設定やらは割愛｡  
 こちらが参考になるかと思います。  
 <https://qiita.com/miyamotok0105/items/851a5e27629bfd1e3226>  
-両者のWebブラウザで`http://xxx.xxx.xxx.yyy/`を開いて*It Works!*が表示されるか確かめる。  
+両者のWebブラウザで`http://xxx.xxx.xxx.yyy/`を開いて *It Works!* が表示されるか確かめる。  
 
 ## 5. コーヒーを淹れながら... Let's do this!! Hello World!!  
 PHPのソースをゲストOSで書いて、 ちゃんとホストOSで実行できるか確認する。  
