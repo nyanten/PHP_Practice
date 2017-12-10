@@ -1,3 +1,8 @@
 <?php
-header('Location: MenuEdit.html');
+foreach($_REQUEST['menu'] as $reserve) {
+	print(htmlspecialchars($reserve, ENT_QUOTES) . '<br />');
+	
+}
 ?>
+
+
